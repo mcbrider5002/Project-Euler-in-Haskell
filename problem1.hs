@@ -31,7 +31,7 @@ multiplesArithmeticSum = (arithmeticSum nThrees 3 3)
    
 -- Implementation using list comprehension   
 multiplesComprehension :: Int
-multiplesComprehension = sum [x | x <- [1..999], x `mod` 3 == 0 || x `mod` 5 == 0]
+multiplesComprehension = sum [x | x <- [1..999], x `rem` 3 == 0 || x `rem` 5 == 0]
 
 ---
 
