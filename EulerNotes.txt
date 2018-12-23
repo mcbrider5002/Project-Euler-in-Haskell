@@ -1,0 +1,3 @@
+Problem three's runtime is unhappily long...
+Can I make it execute faster or implement more sophisticated primality?
+(e.g. 6k +- 1 checks).
