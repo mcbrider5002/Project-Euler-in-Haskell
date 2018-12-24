@@ -2,7 +2,7 @@ import Data.List (nub)
 
 -- Helper
 getMultiples :: Int -> [Int]
-getMultiples base = takeWhile (<1000) [base, base *2..]
+getMultiples base = [base, base *2..999]
 
 ---
 
