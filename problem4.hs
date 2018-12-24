@@ -29,3 +29,5 @@ palindromeRecursive x y m
     
 largestPalindromeRecursive :: Maybe Int
 largestPalindromeRecursive = palindromeRecursive 999 999 0
+
+main = putStrLn (show largestPalindromeRecursive)

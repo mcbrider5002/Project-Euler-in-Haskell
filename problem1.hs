@@ -39,3 +39,5 @@ multiplesComprehension = sum [x | x <- [1..999], x `rem` 3 == 0 || x `rem` 5 == 
 multiplesEquivalency :: Bool
 multiplesEquivalency = (multiples == multiplesArithmeticSum)
                         && (multiples == multiplesComprehension)
+                        
+main = putStrLn (show multiples)

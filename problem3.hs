@@ -37,3 +37,5 @@ findLargestPrimeFactorRecursive n (x:xs)
     
 largestPrimeFactorRecursive :: Integer
 largestPrimeFactorRecursive = findLargestPrimeFactorRecursive target [2 .. intSqrt target]
+
+main = putStrLn (show largestPrimeFactorRecursive)
