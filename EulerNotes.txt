@@ -1,3 +1,3 @@
-Problem three's runtime is in question.
-Can I make it execute faster or implement more sophisticated primality?
-(e.g. 6k +- 1 checks).
+I can still write better algorithms for problem 3...
+
+Can I write an efficient prime factorisation algorithm which I can then use in e.g. problems 3 and 5?

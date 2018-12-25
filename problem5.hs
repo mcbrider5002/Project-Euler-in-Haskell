@@ -1,6 +1,6 @@
 {- Solution by prime factorisation by repeatedly factoring out primes for each number in the list of numbers 
    for which we are trying to find the minimal number divisible by all of them
-   using a similar algorithm as problem 3 but keeping a list of found primes
+   using a similar algorithm as problem 3 but keeping a list of found primes with multiples
    (or otherwise, the intersection of all multisets representing the prime factorisation of each number) -}
 uniqueFactors :: [Int] -> [Int] -> [Int]
 uniqueFactors [] factors = factors
