@@ -1,14 +1,8 @@
 import Data.List (find)
+import EulerUtils (intSqrt)
+import EulerPrimes (isPrime)
 
 target = 600851475143
-
----
-
-intSqrt :: Int -> Int
-intSqrt n = (floor . sqrt . fromIntegral) n
-
-isPrime :: Int -> Bool
-isPrime n = all (\x -> n `mod` x /= 0) [2..(intSqrt n)]
 
 ---
 

@@ -1,11 +1,11 @@
 import Data.List (sortBy)
+import EulerUtils (integralDigits)
 
 -- Checks if an Int is palindromic
 isPalindrome :: Int -> Bool
-isPalindrome n = let pTens = takeWhile (<=n) (map (\x -> 10 ^ x) [0..])
-                     decomposed = map (\x -> (n `div` x) `rem` 10) pTens
-                 in  and (zipWith (==) decomposed (reverse decomposed))
-                 
+isPalindrome n = and (zipWith (==) decomposed (reverse decomposed))
+                    where decomposed = integralDigits n
+
 ---
           
 -- Brute force (but concise!) solution

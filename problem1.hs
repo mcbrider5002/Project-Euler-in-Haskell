@@ -11,7 +11,7 @@ multiples :: Int
 multiples = sum (nub ((getMultiples 3) ++ (getMultiples 5)))
 
 ---
-  
+
 -- Sum of arithmetic sequence using mathematical formula
 arithmeticSum :: Int -> Int -> Int -> Int
 arithmeticSum n a d = floor (((fromIntegral n) / 2.0) 
