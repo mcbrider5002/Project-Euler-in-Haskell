@@ -1,5 +1,3 @@
-import Data.List (nub)
-
 -- Helper
 getMultiples :: Int -> [Int]
 getMultiples base = [base, base *2..999]
