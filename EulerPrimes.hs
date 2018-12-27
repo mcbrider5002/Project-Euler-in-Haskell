@@ -15,24 +15,14 @@ isPrime = trialDivision
 
 --- Prime Generating ---
 
--- Finds all primes in the given range using trial division
-trialPrimes :: [Int] -> [Int]
-trialPrimes ls = [x | x <- reverse ls, isPrime x]
+-- Generates an infinite list of primes using trial division
+trialPrimes :: [Int]
+trialPrimes = 2 : [x | x <- [3, 5..], isPrime x]
 
 -- An implementation of the Sieve of Eratosthenes, but not a very efficient one...
 sieve :: [Int] -> [Int] -> [Int]
-sieve ps [] = ps
-sieve ps (l:ls)
-    | (isPrime l) = sieve (l:ps) ([x | x <- ls, x `rem` l /= 0])
-    | otherwise = sieve ps ls
+sieve ps (l:ls) = l : sieve (l:ps) [x | x <- ls, x `rem` l /= 0]
     
--- Find all primes in the range 5..n using given primality checker
-findPrimes :: ([Int] -> [Int]) -> Int -> [Int]
-findPrimes f n
-    | n <= 1 = []
-    | otherwise = ([x | x <- [5..n]])
-    
-naivePrimes n = (findPrimes (trialPrimes) n) ++ [3, 2]
-sieveOfEratosthenes = findPrimes (sieve [3, 2])
+sieveOfEratosthenes = 2 : (sieve [] ([3, 5..]))
 
-generatePrimes = naivePrimes
+generatePrimes = trialPrimes
