@@ -1,6 +1,6 @@
 import EulerPrimes (isPrime)
 
 getPrime :: Int
-getPrime = snd (head (dropWhile ((<=10000) . fst) (zip [3..] [x | x <- [5, 7..], isPrime x])))
+getPrime = [x | x <- (2 : [3, 5..]), isPrime x] !! 10000
 
 main = putStrLn (show getPrime)

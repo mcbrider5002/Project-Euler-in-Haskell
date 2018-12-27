@@ -8,7 +8,7 @@ getMultiples base = [base, base *2..999]
 
 -- Simple implementation
 multiples :: Int
-multiples = sum (nub ((getMultiples 3) ++ (getMultiples 5)))
+multiples = sum (getMultiples 3) + sum (getMultiples 5) - sum (getMultiples 15)
 
 ---
 
