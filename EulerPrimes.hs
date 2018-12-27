@@ -9,7 +9,9 @@ import EulerUtils (intSqrt)
 --- Primality Testing ---
 
 trialDivision :: Int -> Bool
-trialDivision n = all (\x -> n `rem` x /= 0) [2..(intSqrt n)]
+trialDivision n
+    | n > 1 = all (\x -> n `rem` x /= 0) [2..(intSqrt n)]
+    | otherwise = False
 
 isPrime = trialDivision
 
