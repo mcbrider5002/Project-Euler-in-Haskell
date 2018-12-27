@@ -1,5 +1,9 @@
+There are fast fibonaccis for problem 2...
+
 I can still write better algorithms for problem 3...
 
 There's a formula for problem 6...
+
+For problem 8 it is possible to establish ordering on two adjacent sequences by their first and last digit... Can I utilise this somehow?
 
 Can I write an efficient prime factorisation algorithm which I can then use in e.g. problems 3 and 5?
