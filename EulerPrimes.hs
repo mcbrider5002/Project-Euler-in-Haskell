@@ -9,9 +9,7 @@ import EulerUtils (intSqrt)
 --- Primality Testing ---
 
 trialDivision :: Int -> Bool
-trialDivision n
-    | n > 1 = all (\x -> n `rem` x /= 0) [2..(intSqrt n)]
-    | otherwise = False
+trialDivision n = (n > 1) && (all (\x -> n `rem` x /= 0) [2..(intSqrt n)])
 
 isPrime = trialDivision
 
@@ -21,10 +19,11 @@ isPrime = trialDivision
 trialPrimes :: [Int]
 trialPrimes = 2 : [x | x <- [3, 5..], isPrime x]
 
--- An implementation of the Sieve of Eratosthenes, but not a very efficient one...
-sieve :: [Int] -> [Int] -> [Int]
-sieve ps (l:ls) = l : sieve (l:ps) [x | x <- ls, x `rem` l /= 0]
-    
-sieveOfEratosthenes = 2 : (sieve [] ([3, 5..]))
+sieve :: [Int] -> [Int]
+sieve (l:ls) = l : sieve [x | x <- ls, x `rem` l /= 0]
+
+-- An implementation of the Sieve of Eratosthenes, but not a very efficient one...    
+sieveOfEratosthenes :: [Int]
+sieveOfEratosthenes = 2 : sieve [3, 5..]
 
 generatePrimes = trialPrimes
