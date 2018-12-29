@@ -3,7 +3,7 @@ import EulerUtils (integralDigits)
 
 -- Checks if an Int is palindromic
 isPalindrome :: Int -> Bool
-isPalindrome n = and (zipWith (==) decomposed (reverse decomposed))
+isPalindrome n = decomposed == reverse decomposed
                     where decomposed = integralDigits n
 
 ---
@@ -30,4 +30,4 @@ palindromeRecursive x y m
 largestPalindromeRecursive :: Maybe Int
 largestPalindromeRecursive = palindromeRecursive 999 999 0
 
-main = putStrLn (show largestPalindromeRecursive)
+main = print largestPalindromeRecursive

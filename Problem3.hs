@@ -46,4 +46,4 @@ findLargestPrimeFactorRecursive n ls@(x:xs)
 largestPrimeFactorRecursive :: Int
 largestPrimeFactorRecursive = findLargestPrimeFactorRecursive target [3, 5 .. (target `div` 2)]
 
-main = putStrLn (show largestPrimeFactorRecursive)
+main = print largestPrimeFactorRecursive

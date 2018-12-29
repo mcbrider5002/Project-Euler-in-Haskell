@@ -10,4 +10,4 @@ uniqueFactors (n:ns) factors = let newFactor = foldl (\acc x -> if acc `rem` x =
 smallestDivisible :: Int
 smallestDivisible = product (uniqueFactors [2..20] [])
 
-main = putStrLn (show smallestDivisible)
+main = print smallestDivisible

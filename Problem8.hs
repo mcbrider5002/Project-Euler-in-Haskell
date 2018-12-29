@@ -10,7 +10,7 @@ target = do contents <- (readFile "Problem8.txt")
 target2 = 13
 
 -- Takes a number (as a string) and splits it into a list of m-length contiguous sequences of digits
-numberSplitter :: String -> Int -> [[Int]]
+numberSplitter :: String -> Int -> [SplitInt]
 numberSplitter n m = [map (digitToInt) (take m (drop i n)) | i <- [0..(length n) - m]]
 
 ---

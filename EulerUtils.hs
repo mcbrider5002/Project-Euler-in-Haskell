@@ -7,5 +7,5 @@ type SplitInt = [Int]
 
 -- Split an integral number into its digits
 integralDigits :: (Integral a) => a -> [Int]
-integralDigits n = let pTens = takeWhile (<=n) (map (\x -> 10 ^ x) [0..])
-                   in  map (fromIntegral) (map (\x -> (n `div` x) `rem` 10) pTens)
+integralDigits n = let powersOfTen = takeWhile (<=n) (map (\x -> 10 ^ x) [0..])
+                   in  map (fromIntegral) (map (\x -> (n `div` x) `rem` 10) powersOfTen)

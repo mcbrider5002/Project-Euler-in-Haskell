@@ -1,6 +1,6 @@
-import EulerPrimes (isPrime)
+import EulerPrimes (generatePrimes)
 
 getPrime :: Int
-getPrime = [x | x <- (2 : [3, 5..]), isPrime x] !! 10000
+getPrime = generatePrimes !! 10000
 
-main = putStrLn (show getPrime)
+main = print getPrime
