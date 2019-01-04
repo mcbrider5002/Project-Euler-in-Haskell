@@ -5,7 +5,6 @@ I can still write better algorithms for problem 3...
 There's a formula for problem 6...
 
 For problem 8 it is possible to establish ordering on two adjacent sequences by their first and last digit... Can I utilise this somehow?
-I need to fix the IO in problem 8
 
 Problem 10 CHUGS, can I optimise it?
 

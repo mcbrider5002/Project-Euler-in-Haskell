@@ -1,4 +1,3 @@
-import Data.List (sortBy)
 import EulerUtils (integralDigits)
 
 -- Checks if an Int is palindromic
@@ -8,24 +7,24 @@ isPalindrome n = decomposed == reverse decomposed
 
 ---
           
--- Brute force (but concise!) solution
+{- Solution where we avoid redundant checks by abusing commutativity (i.e. we take the constraint x >= y so we don't check 
+   both e.g. (x = z, y = z - 1) and (x = z - 1, y = z) for some z)
+-}
 largestPalindrome :: Int
-largestPalindrome = head (sortBy (flip compare) [x*y | x <- [999,998..100], y <- [999,998..100], isPalindrome (x * y)])
+largestPalindrome = maximum [x*y | x <- [999,998..100], y <- [x,x-1..100], isPalindrome (x * y)]
 
 ---
 
-{- More careful solution that avoids checking redundant twice by abusing commutativity (i.e. we take the constraint x >= y)
-   and breaking early when we find a new palindrome if future checks would be strictly less than our current result 
+{- Solution where we use the above optimisation and break early when we find a new palindrome if future checks would be strictly less than our current result 
 -}
 palindromeRecursive :: Int -> Int -> Int -> Maybe Int
 palindromeRecursive 99 _ _ = Nothing
 palindromeRecursive x 99 m = palindromeRecursive (x-1) (x-1) m
 palindromeRecursive x y m
-    | isPalindrome (x * y) = let b = max m (x*y)
-                             in  if b > (x-1) * (x-1)
-                                 then Just b
-                                 else palindromeRecursive (x-1) (x-1) b
-    | otherwise = palindromeRecursive x (y-1) m
+    | (not . isPalindrome) (x * y) = palindromeRecursive x (y-1) m
+    | b <= (x-1) * (x-1)           = palindromeRecursive (x-1) (x-1) b
+    | otherwise                    = Just b
+        where b = max m (x*y)
     
 largestPalindromeRecursive :: Maybe Int
 largestPalindromeRecursive = palindromeRecursive 999 999 0
